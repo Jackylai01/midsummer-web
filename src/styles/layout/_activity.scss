@@ -1,0 +1,111 @@
+.activity {
+  width: 100%;
+  background-color: $background_dark;
+  @extend %flex-center;
+
+  &__container {
+    width: 80%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: relative;
+    @extend %flex-center;
+  }
+
+  &__title {
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2.5em;
+    color: $color_text-color-light;
+    @extend %flex-center;
+    h2 {
+      display: block;
+      position: relative;
+
+      > span {
+        padding: 0rem 1rem;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        top: 60%;
+        left: -25%;
+        width: 15%;
+        height: 2px;
+        background-color: $color_text-color-light;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 60%;
+        right: -25%;
+        width: 15%;
+        height: 2px;
+        background-color: $color_text-color-light;
+      }
+    }
+  }
+
+  &__card {
+    flex-direction: row;
+    border-bottom: 2px solid $color_gray-light;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    @extend %flex-center;
+    @include pad-under-width() {
+      flex-direction: column;
+    }
+
+    &--img {
+      flex: 1 1 50%;
+      position: relative;
+      margin-bottom: 1rem;
+      border-radius: 12px;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      @include pad-under-width() {
+        order: 1;
+      }
+    }
+
+    &--caption {
+      @extend %flex-column;
+      flex: 1 1 50%;
+      flex-wrap: wrap;
+
+      padding: 0rem 3rem;
+      @include pad-under-width() {
+        order: 2;
+        padding: 0rem;
+      }
+
+      &-content {
+        margin: 2rem 0rem;
+        font-size: 1rem;
+        font-weight: 500;
+        color: $color_text-color;
+        line-height: 35px;
+      }
+      > h3 {
+        display: inline-block;
+        position: relative;
+        font-size: 2rem;
+        font-weight: 600;
+        color: $color_black;
+        margin-top: 1.5rem;
+
+        @include pad-under-width() {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+.bottom-line {
+  height: 5px;
+  width: 100%;
+  background-color: $color_auxiliary-light;
+  margin-top: 1.5rem;
+}

@@ -1,0 +1,43 @@
+.logoScreen {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $background_beige;
+  opacity: 1;
+  z-index: 5;
+  transition: opacity 1s;
+
+  @extend %flex-center;
+
+  &--hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__image {
+    &-container {
+      width: 100%;
+      height: 100%;
+      @extend %flex-center;
+    }
+    opacity: 0;
+    animation: fadeInOut 3s;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

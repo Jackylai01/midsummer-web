@@ -1,0 +1,17 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  @extend %flex-start;
+
+  &__container {
+    position: relative;
+    width: 100%;
+
+    overflow: hidden;
+  }
+  &__img {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+}

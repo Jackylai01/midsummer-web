@@ -1,0 +1,120 @@
+.midsummer {
+  width: 100%;
+  flex-wrap: wrap;
+  overflow: hidden;
+  position: relative;
+  background-color: $background_dark;
+
+  @extend %flex-center;
+
+  &__container {
+    width: 80%;
+    height: 100%;
+    padding: 3rem;
+    flex-direction: column;
+    @extend %flex-center;
+    @include pad-under-width() {
+      width: 100%;
+    }
+    @include phone-width() {
+      width: 100%;
+    }
+  }
+  &__title {
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: $color_text-color-light;
+    text-align: center;
+    @extend %flex-center;
+
+    @include phone-width() {
+      font-size: 1.25rem;
+    }
+    h2 {
+      display: block;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 5%;
+        height: 2px;
+        background-color: $color_text-color-light;
+        transform: translateX(-110%);
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 5%;
+        height: 2px;
+        background-color: $color_text-color-light;
+        transform: translateX(110%);
+      }
+    }
+  }
+  &__card {
+    width: 100%;
+    margin-bottom: 3rem;
+    @extend %flex-center;
+    @include pad-under-width() {
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+
+    &--caption {
+      color: $color_text-color;
+      font-weight: 500;
+      width: 55%;
+      margin-top: 1rem;
+      @include pad-under-width() {
+        width: 70%;
+      }
+      @include phone-width() {
+        width: 100%;
+      }
+      > p {
+        line-height: 25px;
+      }
+      @include pad-under-width() {
+        flex: 1 1 100%;
+        padding: 0.5rem 0rem;
+      }
+    }
+  }
+  &__items {
+    width: 100%;
+    align-items: stretch;
+    margin-bottom: 3rem;
+
+    @extend %flex-row-center;
+
+    @include phone-width() {
+      justify-content: center;
+    }
+
+    @include pad-under-width() {
+      align-items: center;
+      flex-direction: column;
+    }
+
+    &--img {
+      border-radius: $border-radius_layout;
+      width: 50%;
+      height: 50%;
+      flex-grow: 0.5;
+      @include pad-under-width() {
+        width: 100%;
+      }
+      @include phone-width() {
+        width: 100vw;
+        justify-content: center;
+      }
+    }
+  }
+}

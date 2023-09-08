@@ -1,0 +1,50 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  &--dragging {
+    cursor: grab;
+  }
+  &__slide {
+    pointer-events: none;
+  }
+
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  &__slide {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__pagination {
+    height: 100%;
+    width: 20px;
+    position: absolute;
+    right: 10px; /* 調整這裡來改變點的距離右邊的距離 */
+    top: 50%; /* 讓點在垂直方向上居中 */
+    transform: translateY(-50%);
+    z-index: 1;
+    flex-direction: column;
+    gap: 5px;
+    padding-right: 2rem;
+
+    @extend %flex-center;
+
+    &-dot {
+      width: 10px;
+      height: 10px;
+      background: $color_white;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &--active {
+        background: $color_accent;
+      }
+    }
+  }
+}

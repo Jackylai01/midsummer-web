@@ -1,0 +1,37 @@
+.origin {
+  width: 100%;
+  position: relative;
+  background-color: $background_dark;
+
+  @extend %flex-center;
+
+  &__container {
+    max-height: 80%;
+    width: 80%;
+    border: 3px solid $color_line-light;
+    border-radius: $radius-size_big;
+    background-color: $background_gray-light;
+    @include pad-under-width() {
+      max-height: 80%;
+      width: 90%;
+    }
+    &--content {
+      margin: 3rem 5rem;
+      color: $color_black;
+      @include phone-width() {
+        margin: 1rem 2rem;
+      }
+
+      > h1 {
+        margin-bottom: 3rem;
+        font-size: 1.75rem;
+        font-weight: 500;
+      }
+      p {
+        font-weight: 500;
+        line-height: 2em;
+        font-size: 1rem;
+      }
+    }
+  }
+}
